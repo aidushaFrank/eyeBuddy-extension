@@ -1,15 +1,32 @@
-body {
-  font-family: Arial, sans-serif;
-  width: 260px;
-  padding: 10px;
-}
-
 .night-mode {
-  background-color: #121212 !important;
-  color: #e0e0e0 !important;
+  background-color: #111 !important;
+  color: #e6e6e6 !important;
 }
 
-.improved-font * {
-  font-family: "Helvetica", "Arial", sans-serif !important;
-  font-size: 1.05em !important;
+/* Ensure body gets dark too */
+.night-mode body {
+  background-color: #111 !important;
+  color: #e6e6e6 !important;
+}
+
+/* Fix text inputs/buttons */
+.night-mode input,
+.night-mode textarea,
+.night-mode select,
+.night-mode button {
+  background-color: #222 !important;
+  color: #e6e6e6 !important;
+  border-color: #444 !important;
+}
+
+/* Fix links */
+.night-mode a {
+  color: #80aaff !important;
+}
+
+/* Prevent images & videos from inverting / looking corrupted */
+.night-mode img,
+.night-mode video,
+.night-mode iframe {
+  filter: invert(1) hue-rotate(180deg);
 }
