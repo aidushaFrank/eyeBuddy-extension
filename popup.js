@@ -9,7 +9,8 @@ document.getElementById("color-filter").onchange = (e) => {
 };
 
 document.getElementById("toggle-font").onclick = () => {
-  chrome.storage.sync.get("font", ({ font }) => {
-    chrome.storage.sync.set({ font: !font });
+  chrome.storage.sync.get("fontMode", ({ fontMode }) => {
+    const nextMode = ((fontMode || 0) + 1) % 4; // cycles 0 → 1 → 2 → 3 → back to 0
+    chrome.storage.sync.set({ fontMode: nextMode });
   });
 };

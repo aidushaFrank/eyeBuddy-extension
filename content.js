@@ -57,16 +57,23 @@ chrome.storage.onChanged.addListener((changes) => {
   if (changes.filter) applyColorBlindFilter(changes.filter.newValue);
 });
 
-function applyFontMode(on) {
-  if (on) {
-    document.documentElement.classList.add("better-font");
-  } else {
-    document.documentElement.classList.remove("better-font");
+function applyFontMode(fontMode) {
+  // Remove any previous classes
+  document.documentElement.classList.remove("font-atkinson", "font-opendys", "font-comic");
+
+  if (fontMode === 1) {
+    document.documentElement.classList.add("font-atkinson");
+  } else if (fontMode === 2) {
+    document.documentElement.classList.add("font-opendys");
+  } else if (fontMode === 3) {
+    document.documentElement.classList.add("font-comic");
   }
 }
 
-chrome.storage.sync.get("font", ({ font }) => applyFontMode(font));
+// Load on start
+chrome.storage.sync.get("fontMode", ({ fontMode }) => applyFontMode(fontMode));
 
+// Update when changed
 chrome.storage.onChanged.addListener((changes) => {
-  if (changes.font) applyFontMode(changes.font.newValue);
+  if (changes.fontMode) applyFontMode(changes.fontMode.newValue);
 });

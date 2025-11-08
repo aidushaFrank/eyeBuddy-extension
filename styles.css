@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
 
 svg {
   position: absolute;
@@ -43,8 +44,20 @@ svg {
   background-color: #111 !important;
 }
 
-.better-font, .better-font * {
+.font-atkinson, .font-atkinson * {
   font-family: "Atkinson Hyperlegible", Arial, sans-serif !important;
-  letter-spacing: 0.4px !important;
+  letter-spacing: 0.3px !important;
   line-height: 1.5 !important;
+}
+
+.font-opendys, .font-opendys * {
+  font-family: "OpenDyslexic3", "OpenDyslexic", Arial, sans-serif !important;
+  letter-spacing: 0.4px !important;
+  line-height: 1.55 !important;
+}
+
+.font-comic, .font-comic * {
+  font-family: "Comic Sans MS", Arial, sans-serif !important;
+  letter-spacing: 0.25px !important;
+  line-height: 1.45 !important;
 }
