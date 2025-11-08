@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Study Helper",
+  "version": "1.0",
+  "description": "Screen time tracker + readability + night mode + color filters",
+  "permissions": ["storage", "activeTab", "notifications", "alarms"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "Study Helper" },
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["content.js"], "css": ["styles.css"] }
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  }
+}

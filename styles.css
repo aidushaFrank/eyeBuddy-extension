@@ -1,0 +1,15 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 260px;
+  padding: 10px;
+}
+
+.night-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
+.improved-font * {
+  font-family: "Helvetica", "Arial", sans-serif !important;
+  font-size: 1.05em !important;
+}
