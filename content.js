@@ -1,11 +1,10 @@
 console.log("Content script active");
 
-
 function applyNightMode(night) {
   if (night) {
-    document.documentElement.classList.add("night-mode");
+    document.documentElement.style.filter = "invert(1) hue-rotate(180deg)";
   } else {
-    document.documentElement.classList.remove("night-mode");
+    document.documentElement.style.filter = "";
   }
 }
 
