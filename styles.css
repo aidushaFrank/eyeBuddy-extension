@@ -30,3 +30,7 @@
 .night-mode iframe {
   filter: invert(1) hue-rotate(180deg);
 }
+
+.night-mode * {
+  background-color: #111 !important;
+}
