@@ -39,18 +39,15 @@ function injectColorBlindFilters() {
 injectColorBlindFilters();
 
 function applyColorBlindFilter(type) {
-  switch(type) {
-    case "protanopia":
-      document.documentElement.style.filter = "url(#protanopia)";
-      break;
-    case "deuteranopia":
-      document.documentElement.style.filter = "url(#deuteranopia)";
-      break;
-    case "tritanopia":
-      document.documentElement.style.filter = "url(#tritanopia)";
-      break;
-    default:
-      document.documentElement.style.filter = "";
+  // Always clear existing filter first
+  document.documentElement.style.filter = "";
+
+  if (type === "protanopia") {
+    document.documentElement.style.filter = "url(#protanopia)";
+  } else if (type === "deuteranopia") {
+    document.documentElement.style.filter = "url(#deuteranopia)";
+  } else if (type === "tritanopia") {
+    document.documentElement.style.filter = "url(#tritanopia)";
   }
 }
 
@@ -58,4 +55,18 @@ chrome.storage.sync.get("filter", ({ filter }) => applyColorBlindFilter(filter))
 
 chrome.storage.onChanged.addListener((changes) => {
   if (changes.filter) applyColorBlindFilter(changes.filter.newValue);
+});
+
+function applyFontMode(on) {
+  if (on) {
+    document.documentElement.classList.add("better-font");
+  } else {
+    document.documentElement.classList.remove("better-font");
+  }
+}
+
+chrome.storage.sync.get("font", ({ font }) => applyFontMode(font));
+
+chrome.storage.onChanged.addListener((changes) => {
+  if (changes.font) applyFontMode(changes.font.newValue);
 });

@@ -7,3 +7,9 @@ document.getElementById("toggle-night").onclick = () => {
 document.getElementById("color-filter").onchange = (e) => {
   chrome.storage.sync.set({ filter: e.target.value });
 };
+
+document.getElementById("toggle-font").onclick = () => {
+  chrome.storage.sync.get("font", ({ font }) => {
+    chrome.storage.sync.set({ font: !font });
+  });
+};
