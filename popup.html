@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Study Helper</title>
+</head>
+<body>
+  <h2>Study Helper</h2>
+
+  <button id="toggle-night">🌙 Toggle Night Mode</button>
+  <button id="toggle-font">🔤 Improve Font</button>
+
+  <label>Screen Time Limit (minutes):</label>
+  <input type="number" id="time-limit" min="1"/>
+  <button id="start-timer">Start Timer</button>
+
+  <label>Colorblind Filter:</label>
+  <select id="color-filter">
+    <option value="none">None</option>
+    <option value="protanopia">Protanopia</option>
+    <option value="deuteranopia">Deuteranopia</option>
+    <option value="tritanopia">Tritanopia</option>
+  </select>
+
+  <script src="popup.js"></script>
+</body>
+</html>
