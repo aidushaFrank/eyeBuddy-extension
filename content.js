@@ -77,3 +77,16 @@ chrome.storage.sync.get("fontMode", ({ fontMode }) => applyFontMode(fontMode));
 chrome.storage.onChanged.addListener((changes) => {
   if (changes.fontMode) applyFontMode(changes.fontMode.newValue);
 });
+
+function applyReadingMode(on) {
+  if (on) {
+    document.documentElement.classList.add("reading-mode");
+  } else {
+    document.documentElement.classList.remove("reading-mode");
+  }
+}
+
+chrome.storage.sync.get("reading", ({ reading }) => applyReadingMode(reading));
+chrome.storage.onChanged.addListener((changes) => {
+  if (changes.reading) applyReadingMode(changes.reading.newValue);
+});

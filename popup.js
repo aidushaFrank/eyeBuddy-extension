@@ -97,3 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.getElementById("toggle-reading").onclick = () => {
+  chrome.storage.sync.get("reading", ({ reading }) => {
+    chrome.storage.sync.set({ reading: !reading });
+  });
+};

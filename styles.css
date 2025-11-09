@@ -61,3 +61,15 @@ svg {
   letter-spacing: 0.25px !important;
   line-height: 1.45 !important;
 }
+
+.reading-mode, .reading-mode body, .reading-mode * {
+  background-color: #f7f3e8 !important;  /* soft beige */
+  color: #2f2a25 !important;             /* warm ink */
+  line-height: 1.6 !important;
+  font-size: 1.05em !important;
+}
+
+/* Smooth fade */
+html, body, * {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
